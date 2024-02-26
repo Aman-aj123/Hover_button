@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hover effect Button in CSS | Aman Raz </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: grid;
+            height: 100vh;
+            place-items: center;
+            background: #020212;
+        }
+
+        a {
+            overflow: hidden;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            padding: 10px;
+            width: 150px;
+            display: block;
+            font-size: 20px;
+            border-radius: 2px;
+            transition: .3s;
+            text-align: center;
+            ;
+        }
+
+        a span {
+            position: absolute;
+        }
+
+        .first {
+            color: orange;
+        }
+
+        .first:hover {
+            color: white;
+            background: orange;
+            box-shadow:  0 2px 28px orange ;
+               
+        }
+ 
+        a span:nth-child(1) { 
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, transparent, orange);
+            width: 100%;
+            height: 1px;
+            animation: first 1s linear infinite;
+            animation-delay: .50s;
+        }
+
+        @keyframes first {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%)
+            }
+        }
+
+        a span:nth-child(2) {
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(to bottom, transparent, orange);
+            width: 1px;
+            height: 100%;
+            animation: second 1s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes second {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%)
+            }
+        }
+
+        a span:nth-child(3) {
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(-45deg, transparent, orange);
+            width: 100%;
+            height: 1px;
+            animation: third 1s linear infinite;
+            animation-delay: 1.50s;
+        }
+
+        @keyframes third {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateY(-100%)
+            }
+        }
+
+        a span:nth-child(4) {
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(45deg, transparent, orange);
+            height: 100%;
+            width: 1px;
+            animation: fourth 1s linear infinite;
+            animation-delay: 2.20s;
+        }
+
+        @keyframes fourth {
+            0% {
+                transform: translateY(100%);
+            }
+
+            100% {
+                transform: translateY(-100%);
+                transform: hue-rotate(1deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#" class="first">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Button
+        </a>
+    </div>
+</body>
+
+</html>
